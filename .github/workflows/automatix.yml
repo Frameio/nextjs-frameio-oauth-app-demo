@@ -1,0 +1,55 @@
+name: Automatix-Scan
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+env:
+  GITHUB_TOKEN: ${{ secrets.ORG_GITHUB_TOKEN }}
+  GH_APP_ID: ${{ secrets.AUTOMATIX_APP_ID }}
+  GH_PRIVATE_KEY: ${{ secrets.AUTOMATIX_PKEY }}
+  OBAN_PUB_KEY: ${{ secrets.OBAN_PUB_KEY }}
+  OBAN_AUTH_KEY: ${{ secrets.OBAN_AUTH_KEY }}
+  OP_ENV: "Prod"
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AUTOMATIX_DEV_SLACK_WEBHOOK: ${{ secrets.AUTOMATIX_DEV_SLACK_WEBHOOK }}
+  AUTOMATIX_PROD_SLACK_WEBHOOK: ${{ secrets.AUTOMATIX_PROD_SLACK_WEBHOOK }}
+  AUTOMATIX_OPENCVE_USERNAME: ${{ secrets.AUTOMATIX_OPENCVE_USERNAME }}
+  AUTOMATIX_OPENCVE_PASSWORD: ${{ secrets.AUTOMATIX_OPENCVE_PASSWORD }} 
+
+jobs:
+  scan:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+    steps:
+      # Cleans up any self-hosted runner remnants from any previous jobs
+      - name: Pre-Run Clean up
+        uses: rtCamp/action-cleanup@master
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      # Checks-out the custom GitHub Action in its Frameio repository under $GITHUB_WORKSPACE, so the job can access it
+      - name: Get private repo with action
+        uses: actions/checkout@v2
+        with:
+          repository: frameio/automatix-gh-action
+          ref: main
+          token: ${{ secrets.ORG_GITHUB_TOKEN }}
+          path: .github/actions/automatix-gh-action
+          
+      # Call and execute the custom GitHub Action to start the Automatix scan
+      - name: Automatix Scan
+        uses: ./.github/actions/automatix-gh-action
+
+      # Cleanup after ourselves since self-hosted runners don't do this by default
+      - name: Post-Run Clean up
+        uses: rtCamp/action-cleanup@master
+

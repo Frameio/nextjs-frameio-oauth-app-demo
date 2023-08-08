@@ -1,0 +1,122 @@
+version: 0.1
+config:
+  allowlist:
+    detect-secrets:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+    bandit:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+    
+    gosec:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+
+    sobelow:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+
+    semgrep:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+
+    mobsf:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+
+    tfsec:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+
+    gitleaks:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
+
+    trufflehog:
+      # Add files and/or paths you want to allowlist here
+      # Regex snytax applies
+      # Ex: "*/something/I/want/to/ignore/*.py"
+      - rule: "Ignore files and paths"
+        location:
+        - ""
+
+      # Add scanner specific rule id values here
+      # Ex: "B101"
+      - rule: "Ignore rule IDs"
+        check:
+        - ""
