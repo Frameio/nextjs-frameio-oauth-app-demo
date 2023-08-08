@@ -2843,10 +2843,9 @@ videojs-font@4.1.0:
   resolved "https://registry.yarnpkg.com/videojs-font/-/videojs-font-4.1.0.tgz#3ae1dbaac60b4f0f1c4e6f7ff9662a89df176015"
   integrity sha512-X1LuPfLZPisPLrANIAKCknZbZu5obVM/ylfd1CN+SsCmPZQ3UMDPcvLTpPBJxcBuTpHQq2MO1QCFt7p8spnZ/w==
 
-videojs-quality-selector-hls@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/videojs-quality-selector-hls/-/videojs-quality-selector-hls-1.1.0.tgz#5f72e9a5cd8ea59bcf1a6d3730d39ff74d698721"
-  integrity sha512-zsUj5Gs4RhjOR2fJ25AZQn/rvK2PcMMYSwv2iQH7EctxH6vMOejRl+gX4r3jycLGOb73cxUr2bMA5YsydJRemA==
+"videojs-quality-selector-hls@https://github.com/jhodges10/videojs-quality-selector-hls.git#jhodges10-patch-1":
+  version "1.0.1"
+  resolved "https://github.com/jhodges10/videojs-quality-selector-hls.git#e8269d4f45192e6111c3d872cc3e0723983c6962"
   dependencies:
     global "^4.4.0"
     video.js "^8.3.0"
