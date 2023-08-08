@@ -50,8 +50,8 @@ export const VideoPlayer = (props) => {
             /> */}
             <h2>{title}</h2>
             <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
-            <h3>Is Session Based Watermarked: {sbwEnabled.toString()}</h3>
-            <h3>Is Forensically Watermarked: {fWatermarkingEnabled.toString()}</h3>
+            {/* <h3>Is Session Based Watermarked: {sbwEnabled.toString()}</h3>
+            <h3>Is Forensically Watermarked: {fWatermarkingEnabled.toString()}</h3> */}
         </div>
     )
 }
