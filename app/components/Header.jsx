@@ -13,7 +13,7 @@ const Header = () => {
             </Link>
           </li>
           <li className='text-sm'>
-            <Link href='/protected/server'>Review Link Demo</Link>
+            <Link href='/protected/review-link'>Review Link Demo</Link>
           </li>
           <li>
             <SignInButton />

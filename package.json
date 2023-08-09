@@ -11,6 +11,7 @@
     "proxy": "local-ssl-proxy --source 443 --target ${PORT:-3000} --cert ./certs/cert.pem --key ./certs/key.pem"
   },
   "dependencies": {
+    "@silvermine/videojs-chromecast": "^1.4.1",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",

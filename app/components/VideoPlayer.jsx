@@ -9,15 +9,28 @@ export const VideoPlayer = (props) => {
 
     const playerRef = useRef(null);
 
+    // Chromecast plugin disabled until this gets merged - https://github.com/silvermine/videojs-chromecast/pull/118
+
     const videoJsOptions = {
         autoplay: false,
         controls: true,
         responsive: true,
         fluid: true,
+        // techOrder: [ 'chromecast', 'html5' ],
         sources: [{
             src: hls,
             type: 'application/x-mpegURL',
-        }]
+        }],
+        html5: {
+            hls: {
+                overrideNative: true
+            }
+        },    
+        // plugins: {
+        //     chromecast: {
+        //         addCastLabelToButton: true,
+        //     },
+        // }    
     };
 
     const handlePlayerReady = (player) => {

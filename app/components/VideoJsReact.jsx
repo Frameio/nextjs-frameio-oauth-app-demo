@@ -1,7 +1,12 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import qualitySelectorHls from 'videojs-quality-selector-hls-custom'
+
+// Disabled until this gets merged - https://github.com/silvermine/videojs-chromecast/pull/118
+// require('@silvermine/videojs-chromecast')(videojs);
 
 export const VideoJS = (props) => {
   const videoRef = useRef(null);
@@ -18,14 +23,13 @@ export const VideoJS = (props) => {
       videoElement.classList.add('vjs-big-play-centered');
       videoRef.current.appendChild(videoElement);
 
-      videojs.registerPlugin('qualitySelectorHls', qualitySelectorHls);
+      // videojs.registerPlugin('qualitySelectorHls', qualitySelectorHls);
 
       const player = playerRef.current = videojs(videoElement, options, () => {
         videojs.log('player is ready');
         onReady && onReady(player);
       });
-      
-      
+
       player.qualitySelectorHls({
         displayCurrentQuality: true,
         placementIndex: 2,
