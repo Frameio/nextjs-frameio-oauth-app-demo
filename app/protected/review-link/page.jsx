@@ -30,18 +30,12 @@ const ServerProtectedPage = async () => {
   return (
     <section className='py-24'>
       <div className='container'>
-        <h1 className='text-2xl font-bold'>Accessing asset using the following Frame.io account:</h1>
-        {/* <form>
-          <input width={600} type='text' placeholder='Enter a review link ID'></input>
-        </form> */}
-        <p className='mt-4'>{session?.user?.email}</p>
-        <div className='container py-24' style={{ width: '80vw', overflow: 'scroll' }}>
+        <h1 className='text-xl'>Accessing <b>{reviewLinkInfo?.name}</b> using the following Frame.io account: <b>{session?.user?.email}</b></h1>
+        <div className='container' style={{ paddingTop: '2rem' }}>
           {/* <code>
             {JSON.stringify(reviewLinkAssets)}
           </code> */}
           {reviewLinkAssets?.map((asset) => {
-            // const item = asset.asset
-            // console.log(item?.hls_manifest)
             if (asset.asset.hls_manifest) {
               return (
                 <VideoPlayer

@@ -17,7 +17,6 @@ export const VideoPlayer = (props) => {
         sources: [{
             src: hls,
             type: 'application/x-mpegURL',
-            // type: 'video/mp4'
         }]
     };
 
@@ -34,24 +33,10 @@ export const VideoPlayer = (props) => {
         });
     };
 
-
-
-    console.log(props)
-    return(
-        <div className="container">
-            {/* <MuxVideo
-                theme="minimal"
-                style={{ height: "100%", maxWidth: "100%" }}
-                src={hls}
-                controls={true}
-                autoPlay
-                type="hls"
-                muted
-            /> */}
-            <h2>{title}</h2>
+    return (
+        <div className="container" style={{ paddingBottom: '3rem' }}>
+            <h2 className="text-lg" style={{ paddingBottom: '1rem' }}><b>{title}</b></h2>
             <VideoJS options={videoJsOptions} onReady={handlePlayerReady} />
-            {/* <h3>Is Session Based Watermarked: {sbwEnabled.toString()}</h3>
-            <h3>Is Forensically Watermarked: {fWatermarkingEnabled.toString()}</h3> */}
         </div>
     )
 }

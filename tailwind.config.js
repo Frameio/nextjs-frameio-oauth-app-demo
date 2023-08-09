@@ -9,12 +9,15 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
-        md: '1.5rem',
-        lg: '2rem'
+        DEFAULT: '1rem 0',
+        xs: '1rem'
       }
     },
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['Inter'],
+      },
+    },
   },
   plugins: []
 }

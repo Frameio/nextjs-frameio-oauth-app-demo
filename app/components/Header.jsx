@@ -12,12 +12,6 @@ const Header = () => {
               <Image height={72} width={128} src='/bbc-logo.png' alt='BBC Logo' />
             </Link>
           </li>
-          {/* <li className='text-sm'>
-            <Link href='/protected/player/video_1'>Video 1</Link>
-          </li>
-          <li className='text-sm'>
-            <Link href='/protected/player/video_2'>Video 2</Link>
-          </li> */}
           <li className='text-sm'>
             <Link href='/protected/server'>Review Link Demo</Link>
           </li>
