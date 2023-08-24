@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
                     preloadWebComponents: true,
                 };`}
             </script> */}
-
+            <link rel="icon" href="/frame-io.png" sizes="any" />
             <script async type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
             <body className='flex h-full flex-col'>
                 <Provider>

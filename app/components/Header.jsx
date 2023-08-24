@@ -4,19 +4,21 @@ import SignInButton from './SignInButton'
 
 const Header = () => {
   return (
-    <header className='flex h-24 flex-col justify-center bg-stone-100'>
+    <header className='flex h-24 flex-col justify-center bg-stone-100' style={{ minHeight: '6rem' }}>
       <nav className='container'>
         <ul className='flex items-center justify-between gap-8 font-medium tracking-wider text-stone-500'>
-          <li className='text-sm'>
+          <li style={{ width: '200px' }}>
             <Link href='/'>
-              <Image height={72} width={128} src='/bbc-logo.png' alt='BBC Logo' />
+              <Image height={72} width={128} src='/frameio-wordmark-black.png' alt='Company Logo' />
             </Link>
           </li>
-          <li className='text-sm'>
+          <li className='text-sm' style={{ width: '200px' }}>
             <Link href='/protected/review-link'>Review Link Demo</Link>
           </li>
-          <li>
-            <SignInButton />
+          <li style={{ width: '200px', display: 'block' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', margin: 'auto 0' }}>
+              <SignInButton />
+            </div>
           </li>
         </ul>
       </nav>
