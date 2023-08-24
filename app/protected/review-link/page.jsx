@@ -4,6 +4,8 @@ import { authOptions } from '../../api/auth/[...nextauth]/route'
 import { VideoPlayer } from '@/app/components/VideoPlayer';
 
 let accessToken;
+let reviewLinkInfo;
+let reviewLinkAssets;
 
 const ServerProtectedPage = async () => {
   const session = await getServerSession(authOptions);
@@ -41,6 +43,7 @@ const ServerProtectedPage = async () => {
                 <VideoPlayer
                   key={asset.asset.asset_id}
                   hls={asset.asset.hls_manifest}
+                  posterImage={asset.asset.thumb}
                   title={asset.asset.name}
                   fWatermarkingEnabled={asset.asset.is_forensically_watermarked}
                   sbwEnabled={asset.asset.is_session_watermarked}

@@ -8,7 +8,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-    title: 'BBC Distribution Streaming App Example',
+    title: 'Frame.io Next.js + OAuth Demo',
     description: 'Next.js, Next Auth, OAuth, video.js, etc'
 }
 

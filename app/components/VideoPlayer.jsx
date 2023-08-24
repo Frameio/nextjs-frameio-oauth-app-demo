@@ -5,7 +5,9 @@ import VideoJS from "./VideoJsReact";
 
 
 export const VideoPlayer = (props) => {
-    const { title, sbwEnabled, fWatermarkingEnabled, hls } = props;
+    const { title, sbwEnabled, fWatermarkingEnabled, hls, posterImage } = props;
+
+    console.log('posterImage', posterImage);
 
     const playerRef = useRef(null);
 
@@ -17,6 +19,8 @@ export const VideoPlayer = (props) => {
         responsive: true,
         fluid: true,
         // techOrder: [ 'chromecast', 'html5' ],
+        poster: posterImage,
+        preload: 'metadata',
         sources: [{
             src: hls,
             type: 'application/x-mpegURL',
@@ -29,8 +33,14 @@ export const VideoPlayer = (props) => {
         // plugins: {
         //     chromecast: {
         //         addCastLabelToButton: true,
+        //         https://github.com/silvermine/videojs-chromecast/issues/123#issuecomment-1218379735
+        //         modifyLoadRequestFn: function (loadRequest) {
+        //             loadRequest.media.hlsSegmentFormat = 'fmp4';
+        //             loadRequest.media.hlsVideoSegmentFormat = 'fmp4';
+        //                 return loadRequest;
+        //          },
         //     },
-        // }    
+        // }
     };
 
     const handlePlayerReady = (player) => {
